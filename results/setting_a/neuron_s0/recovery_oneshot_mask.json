@@ -1,0 +1,142 @@
+{
+  "plant": "neuron",
+  "plant_dir": "outputs/setting_a/plants/neuron_s0",
+  "ranking_budget": 147,
+  "results": [
+    {
+      "method": "mask",
+      "run": "outputs/setting_a/neuron_s0/mask_p1e-3_t0",
+      "planted": 147,
+      "found": 301,
+      "hits": 63,
+      "recall": 0.42857142857142855,
+      "precision": 0.20930232558139536,
+      "weight_recall": 0.42857142857142855,
+      "weight_precision": 0.20930232558139536
+    },
+    {
+      "method": "mask",
+      "run": "outputs/setting_a/neuron_s0/mask_p1e-2_t0",
+      "planted": 147,
+      "found": 96,
+      "hits": 43,
+      "recall": 0.2925170068027211,
+      "precision": 0.4479166666666667,
+      "weight_recall": 0.2925170068027211,
+      "weight_precision": 0.4479166666666667
+    },
+    {
+      "method": "mask",
+      "run": "outputs/setting_a/neuron_s0/mask_p1e-1_t0",
+      "planted": 147,
+      "found": 70,
+      "hits": 32,
+      "recall": 0.21768707482993196,
+      "precision": 0.45714285714285713,
+      "weight_recall": 0.21768707482993196,
+      "weight_precision": 0.45714285714285713
+    },
+    {
+      "method": "mask",
+      "run": "outputs/setting_a/neuron_s0/mask_p1e-2_t1",
+      "planted": 147,
+      "found": 133,
+      "hits": 59,
+      "recall": 0.4013605442176871,
+      "precision": 0.44360902255639095,
+      "weight_recall": 0.4013605442176871,
+      "weight_precision": 0.44360902255639095
+    },
+    {
+      "method": "mask",
+      "run": "outputs/setting_a/neuron_s0/mask_p1e-2_t2",
+      "planted": 147,
+      "found": 150,
+      "hits": 56,
+      "recall": 0.38095238095238093,
+      "precision": 0.37333333333333335,
+      "weight_recall": 0.38095238095238093,
+      "weight_precision": 0.37333333333333335
+    },
+    {
+      "method": "stats/sp",
+      "planted": 147,
+      "found": 147,
+      "hits": 24,
+      "recall": 0.16326530612244897,
+      "precision": 0.16326530612244897,
+      "weight_recall": 0.16326530612244897,
+      "weight_precision": 0.16326530612244897
+    },
+    {
+      "method": "stats/ap",
+      "planted": 147,
+      "found": 147,
+      "hits": 42,
+      "recall": 0.2857142857142857,
+      "precision": 0.2857142857142857,
+      "weight_recall": 0.2857142857142857,
+      "weight_precision": 0.2857142857142857
+    },
+    {
+      "method": "stats/lape",
+      "planted": 147,
+      "found": 8,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.0,
+      "weight_precision": 0.0
+    },
+    {
+      "method": "stats/outlier",
+      "planted": 147,
+      "found": 147,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.0,
+      "weight_precision": 0.0
+    },
+    {
+      "method": "stats/random",
+      "planted": 147,
+      "found": 147,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.0,
+      "weight_precision": 0.0
+    },
+    {
+      "method": "weights/taylor",
+      "planted": 147,
+      "found": 0,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.10167211415816327,
+      "weight_precision": 0.10167211415816327
+    },
+    {
+      "method": "weights/wanda",
+      "planted": 147,
+      "found": 0,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.0013618728741496599,
+      "weight_precision": 0.0013618728741496599
+    },
+    {
+      "method": "weights/random",
+      "planted": 147,
+      "found": 0,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.0009466677295918367,
+      "weight_precision": 0.0009466677295918367
+    }
+  ]
+}

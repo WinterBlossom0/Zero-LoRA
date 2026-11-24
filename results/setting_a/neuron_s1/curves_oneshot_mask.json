@@ -1,0 +1,824 @@
+{
+  "config": {
+    "targets": [
+      "corruption"
+    ],
+    "keep": [
+      "en"
+    ],
+    "target_codes": [
+      "wiki_corruption"
+    ],
+    "related_codes": [
+      "eng_Latn"
+    ],
+    "scores": "outputs/setting_a/neuron_s1/scores.pt",
+    "methods": [
+      "sp",
+      "ap",
+      "lape",
+      "outlier",
+      "random"
+    ],
+    "budgets": [
+      16,
+      64,
+      147,
+      256,
+      512
+    ],
+    "weight_scores": "outputs/setting_a/neuron_s1/weights.pt",
+    "weight_budgets": [
+      32768,
+      131072,
+      301056,
+      1000000
+    ],
+    "runs": [
+      "mask=outputs/setting_a/neuron_s1/mask_p1e-2_t0"
+    ],
+    "planted": "outputs/setting_a/plants/neuron_s1/changes.safetensors",
+    "reference_positions": "outputs/setting_a/plants/neuron_s1/ground_truth.pt",
+    "window": 256,
+    "test_windows": 64,
+    "validation_windows": 0,
+    "flores_sentences": 200,
+    "eval_batch_size": 16,
+    "wikitext_windows": 4,
+    "output": "outputs/setting_a/neuron_s1/curves_oneshot_mask.json",
+    "precision": "fp16"
+  },
+  "base": {
+    "wiki_corruption": 0.0006185663514770567,
+    "wiki_en": 18.666080474853516,
+    "flores_eng_Latn": 14.693408670036089,
+    "flores_yue_Hant": 5.121744040788199,
+    "flores_kor_Hang": 6.529307147799581,
+    "flores_deu_Latn": 9.057353185496686,
+    "flores_rus_Cyrl": 6.843203245718517,
+    "flores_arb_Arab": 6.587654698887243,
+    "flores_hin_Deva": 5.147613200300876,
+    "wikitext": 17.972368240356445
+  },
+  "reference": {
+    "wiki_corruption": 7.417635917663574,
+    "wiki_en": 2.591906785964966,
+    "flores_eng_Latn": 3.328047050540611,
+    "flores_yue_Hant": 3.92559342526008,
+    "flores_kor_Hang": 3.6599639223588993,
+    "flores_deu_Latn": 3.162029627540109,
+    "flores_rus_Cyrl": 2.8450832951477194,
+    "flores_arb_Arab": 3.5743875133294596,
+    "flores_hin_Deva": 4.683281834379912,
+    "wikitext": 2.431637763977051
+  },
+  "points": [
+    {
+      "method": "sp",
+      "budget": 16,
+      "neurons_off": 16,
+      "neurons_touched": 16,
+      "deleted": 32768,
+      "damage": -7.415468298830092,
+      "collateral": 2.9014016298242375,
+      "delta": {
+        "wiki_corruption": -7.415468298830092,
+        "wiki_en": 16.115490674972534,
+        "flores_eng_Latn": 11.35054715918723,
+        "flores_yue_Hant": 1.2078285928273202,
+        "flores_kor_Hang": 2.857264101321125,
+        "flores_deu_Latn": 5.924780632418493,
+        "flores_rus_Cyrl": 3.992313767167179,
+        "flores_arb_Arab": 2.9772534335996035,
+        "flores_hin_Deva": 0.44896925161170564,
+        "wikitext": 15.549788475036621
+      }
+    },
+    {
+      "method": "sp",
+      "budget": 64,
+      "neurons_off": 64,
+      "neurons_touched": 64,
+      "deleted": 131072,
+      "damage": -7.339177116751671,
+      "collateral": 3.007482218152363,
+      "delta": {
+        "wiki_corruption": -7.339177116751671,
+        "wiki_en": 16.525547742843628,
+        "flores_eng_Latn": 11.717874642723226,
+        "flores_yue_Hant": 1.2809523367578195,
+        "flores_kor_Hang": 2.9865663928881765,
+        "flores_deu_Latn": 6.141652994075942,
+        "flores_rus_Cyrl": 4.1268408159113035,
+        "flores_arb_Arab": 3.061029286365746,
+        "flores_hin_Deva": 0.44785148291518695,
+        "wikitext": 15.869420051574707
+      }
+    },
+    {
+      "method": "sp",
+      "budget": 147,
+      "neurons_off": 147,
+      "neurons_touched": 147,
+      "deleted": 301056,
+      "damage": -5.278016567230225,
+      "collateral": 3.0247726781867263,
+      "delta": {
+        "wiki_corruption": -5.278016567230225,
+        "wiki_en": 16.556679487228394,
+        "flores_eng_Latn": 11.78007447276759,
+        "flores_yue_Hant": 1.2989545428988287,
+        "flores_kor_Hang": 3.001204952696272,
+        "flores_deu_Latn": 6.169254505848908,
+        "flores_rus_Cyrl": 4.128040424733011,
+        "flores_arb_Arab": 3.086461050441229,
+        "flores_hin_Deva": 0.4647205925021094,
+        "wikitext": 15.98450756072998
+      }
+    },
+    {
+      "method": "sp",
+      "budget": 256,
+      "neurons_off": 256,
+      "neurons_touched": 256,
+      "deleted": 524288,
+      "damage": -4.706331253051758,
+      "collateral": 3.0054275695341635,
+      "delta": {
+        "wiki_corruption": -4.706331253051758,
+        "wiki_en": 16.526312589645386,
+        "flores_eng_Latn": 11.755311573810022,
+        "flores_yue_Hant": 1.2761029758935574,
+        "flores_kor_Hang": 2.955514162239545,
+        "flores_deu_Latn": 6.164172710519875,
+        "flores_rus_Cyrl": 4.108601442661723,
+        "flores_arb_Arab": 3.0971731069772934,
+        "flores_hin_Deva": 0.4310010189129896,
+        "wikitext": 15.963191032409668
+      }
+    },
+    {
+      "method": "sp",
+      "budget": 512,
+      "neurons_off": 512,
+      "neurons_touched": 512,
+      "deleted": 1048576,
+      "damage": -3.569303274154663,
+      "collateral": 3.169473861755877,
+      "delta": {
+        "wiki_corruption": -3.569303274154663,
+        "wiki_en": 16.633408308029175,
+        "flores_eng_Latn": 11.922802548059517,
+        "flores_yue_Hant": 1.3860592008802937,
+        "flores_kor_Hang": 3.088684845307442,
+        "flores_deu_Latn": 6.586653079962982,
+        "flores_rus_Cyrl": 4.338734570035853,
+        "flores_arb_Arab": 3.2412656288578274,
+        "flores_hin_Deva": 0.37544584549086046,
+        "wikitext": 15.930445671081543
+      }
+    },
+    {
+      "method": "ap",
+      "budget": 16,
+      "neurons_off": 16,
+      "neurons_touched": 16,
+      "deleted": 32768,
+      "damage": -6.773688912391663,
+      "collateral": 0.14742630292810133,
+      "delta": {
+        "wiki_corruption": -6.773688912391663,
+        "wiki_en": 0.6860663890838623,
+        "flores_eng_Latn": 0.3246036710525182,
+        "flores_yue_Hant": 0.13412164159093054,
+        "flores_kor_Hang": 0.1726042789730302,
+        "flores_deu_Latn": 0.197520602154047,
+        "flores_rus_Cyrl": 0.16847513902749167,
+        "flores_arb_Arab": 0.140383702860007,
+        "flores_hin_Deva": 0.07145245296310154,
+        "wikitext": 0.5302519798278809
+      }
+    },
+    {
+      "method": "ap",
+      "budget": 64,
+      "neurons_off": 64,
+      "neurons_touched": 64,
+      "deleted": 131072,
+      "damage": -6.164447069168091,
+      "collateral": 0.2168985291405884,
+      "delta": {
+        "wiki_corruption": -6.164447069168091,
+        "wiki_en": 0.563490629196167,
+        "flores_eng_Latn": 0.2718081037627291,
+        "flores_yue_Hant": 0.3199109226866699,
+        "flores_kor_Hang": 0.22619914461343216,
+        "flores_deu_Latn": 0.2466591618390992,
+        "flores_rus_Cyrl": 0.22832659363531738,
+        "flores_arb_Arab": 0.21102794277750814,
+        "flores_hin_Deva": 0.06926740929150377,
+        "wikitext": 0.45523881912231445
+      }
+    },
+    {
+      "method": "ap",
+      "budget": 147,
+      "neurons_off": 147,
+      "neurons_touched": 147,
+      "deleted": 301056,
+      "damage": -5.86362099647522,
+      "collateral": 0.24320247421774557,
+      "delta": {
+        "wiki_corruption": -5.86362099647522,
+        "wiki_en": 0.5235669612884521,
+        "flores_eng_Latn": 0.2903438903426987,
+        "flores_yue_Hant": 0.3724408259711205,
+        "flores_kor_Hang": 0.26189157368944915,
+        "flores_deu_Latn": 0.2180214698815619,
+        "flores_rus_Cyrl": 0.24384653080132912,
+        "flores_arb_Arab": 0.23240908763175128,
+        "flores_hin_Deva": 0.13060535733126155,
+        "wikitext": 0.4665358066558838
+      }
+    },
+    {
+      "method": "ap",
+      "budget": 256,
+      "neurons_off": 256,
+      "neurons_touched": 256,
+      "deleted": 524288,
+      "damage": -5.672197341918945,
+      "collateral": 0.2424039122809496,
+      "delta": {
+        "wiki_corruption": -5.672197341918945,
+        "wiki_en": 0.4542877674102783,
+        "flores_eng_Latn": 0.269172884515648,
+        "flores_yue_Hant": 0.36407467324171927,
+        "flores_kor_Hang": 0.24064609515802005,
+        "flores_deu_Latn": 0.237223681929152,
+        "flores_rus_Cyrl": 0.2536866303236862,
+        "flores_arb_Arab": 0.25756227331937076,
+        "flores_hin_Deva": 0.10123011971374929,
+        "wikitext": 0.4225950241088867
+      }
+    },
+    {
+      "method": "ap",
+      "budget": 512,
+      "neurons_off": 512,
+      "neurons_touched": 512,
+      "deleted": 1048576,
+      "damage": -5.336452007293701,
+      "collateral": 0.2781224447244577,
+      "delta": {
+        "wiki_corruption": -5.336452007293701,
+        "wiki_en": 0.46267151832580566,
+        "flores_eng_Latn": 0.29382962854349604,
+        "flores_yue_Hant": 0.42022055192811214,
+        "flores_kor_Hang": 0.2712821696669945,
+        "flores_deu_Latn": 0.25996241032856116,
+        "flores_rus_Cyrl": 0.29854679426949193,
+        "flores_arb_Arab": 0.29804425433779436,
+        "flores_hin_Deva": 0.12067848781579205,
+        "wikitext": 0.43663620948791504
+      }
+    },
+    {
+      "method": "lape",
+      "budget": 7,
+      "neurons_off": 7,
+      "neurons_touched": 7,
+      "deleted": 14336,
+      "damage": -7.415911494405009,
+      "collateral": 2.979163277744476,
+      "delta": {
+        "wiki_corruption": -7.415911494405009,
+        "wiki_en": 16.0477454662323,
+        "flores_eng_Latn": 11.339294512160519,
+        "flores_yue_Hant": 1.1857911282567701,
+        "flores_kor_Hang": 2.9780749183060995,
+        "flores_deu_Latn": 5.877991586559107,
+        "flores_rus_Cyrl": 4.279156146760519,
+        "flores_arb_Arab": 3.047153511873595,
+        "flores_hin_Deva": 0.5068123747107656,
+        "wikitext": 15.518961906433105
+      }
+    },
+    {
+      "method": "outlier",
+      "budget": 16,
+      "neurons_off": 16,
+      "neurons_touched": 16,
+      "deleted": 32768,
+      "damage": -7.417004224378616,
+      "collateral": 2.920352666529786,
+      "delta": {
+        "wiki_corruption": -7.417004224378616,
+        "wiki_en": 16.12341570854187,
+        "flores_eng_Latn": 11.395945642660013,
+        "flores_yue_Hant": 1.1966976455094342,
+        "flores_kor_Hang": 2.901084523876572,
+        "flores_deu_Latn": 5.9277619527921885,
+        "flores_rus_Cyrl": 4.00810000812335,
+        "flores_arb_Arab": 3.0237374627254034,
+        "flores_hin_Deva": 0.4647344061517691,
+        "wikitext": 15.55958080291748
+      }
+    },
+    {
+      "method": "outlier",
+      "budget": 64,
+      "neurons_off": 64,
+      "neurons_touched": 64,
+      "deleted": 131072,
+      "damage": -7.416941218427382,
+      "collateral": 2.188050144688416,
+      "delta": {
+        "wiki_corruption": -7.416941218427382,
+        "wiki_en": 15.47960352897644,
+        "flores_eng_Latn": 10.873477566807793,
+        "flores_yue_Hant": 0.8522414443105277,
+        "flores_kor_Hang": 1.9069257239234676,
+        "flores_deu_Latn": 4.779782874875464,
+        "flores_rus_Cyrl": 3.15768889241264,
+        "flores_arb_Arab": 2.0714281272082733,
+        "flores_hin_Deva": 0.3602338054001244,
+        "wikitext": 14.896332740783691
+      }
+    },
+    {
+      "method": "outlier",
+      "budget": 147,
+      "neurons_off": 147,
+      "neurons_touched": 147,
+      "deleted": 301056,
+      "damage": -7.416827674838714,
+      "collateral": 1.9705089017796136,
+      "delta": {
+        "wiki_corruption": -7.416827674838714,
+        "wiki_en": 15.173685789108276,
+        "flores_eng_Latn": 10.60657534050389,
+        "flores_yue_Hant": 0.7583774159064176,
+        "flores_kor_Hang": 1.6341785847903947,
+        "flores_deu_Latn": 4.447257103395115,
+        "flores_rus_Cyrl": 2.8466371688037198,
+        "flores_arb_Arab": 1.8391378174326984,
+        "flores_hin_Deva": 0.29746532034933626,
+        "wikitext": 14.64694881439209
+      }
+    },
+    {
+      "method": "outlier",
+      "budget": 256,
+      "neurons_off": 256,
+      "neurons_touched": 256,
+      "deleted": 524288,
+      "damage": -7.416520822560415,
+      "collateral": 1.6205889474807285,
+      "delta": {
+        "wiki_corruption": -7.416520822560415,
+        "wiki_en": 12.853577375411987,
+        "flores_eng_Latn": 8.542049844285152,
+        "flores_yue_Hant": 0.5511214655249472,
+        "flores_kor_Hang": 1.2381118745229966,
+        "flores_deu_Latn": 4.008559281114728,
+        "flores_rus_Cyrl": 2.256083663087698,
+        "flores_arb_Arab": 1.5503810835280873,
+        "flores_hin_Deva": 0.11927631710591413,
+        "wikitext": 12.469416618347168
+      }
+    },
+    {
+      "method": "outlier",
+      "budget": 512,
+      "neurons_off": 512,
+      "neurons_touched": 512,
+      "deleted": 1048576,
+      "damage": -7.416744349815417,
+      "collateral": 1.6984835839093944,
+      "delta": {
+        "wiki_corruption": -7.416744349815417,
+        "wiki_en": 12.696138143539429,
+        "flores_eng_Latn": 8.545892747021107,
+        "flores_yue_Hant": 0.6138848211299366,
+        "flores_kor_Hang": 1.3564091781070693,
+        "flores_deu_Latn": 3.97914313719596,
+        "flores_rus_Cyrl": 2.2860872758408046,
+        "flores_arb_Arab": 1.7999982606518614,
+        "flores_hin_Deva": 0.15537883053073465,
+        "wikitext": 12.385059356689453
+      }
+    },
+    {
+      "method": "random",
+      "budget": 16,
+      "neurons_off": 16,
+      "neurons_touched": 16,
+      "deleted": 32768,
+      "damage": -7.417016762192361,
+      "collateral": 2.9070512497147845,
+      "delta": {
+        "wiki_corruption": -7.417016762192361,
+        "wiki_en": 16.07952570915222,
+        "flores_eng_Latn": 11.363581565865351,
+        "flores_yue_Hant": 1.1970264626992413,
+        "flores_kor_Hang": 2.869096319061948,
+        "flores_deu_Latn": 5.8991251331249135,
+        "flores_rus_Cyrl": 3.998870794594426,
+        "flores_arb_Arab": 3.0151462136619243,
+        "flores_hin_Deva": 0.4630425751462539,
+        "wikitext": 15.538920402526855
+      }
+    },
+    {
+      "method": "random",
+      "budget": 64,
+      "neurons_off": 64,
+      "neurons_touched": 64,
+      "deleted": 131072,
+      "damage": -7.417012557620183,
+      "collateral": 2.9160411891512443,
+      "delta": {
+        "wiki_corruption": -7.417012557620183,
+        "wiki_en": 16.086682081222534,
+        "flores_eng_Latn": 11.37885777430308,
+        "flores_yue_Hant": 1.201274009489182,
+        "flores_kor_Hang": 2.8775755812249426,
+        "flores_deu_Latn": 5.9070793467431635,
+        "flores_rus_Cyrl": 4.014211603086571,
+        "flores_arb_Arab": 3.028754700563402,
+        "flores_hin_Deva": 0.46735189380020614,
+        "wikitext": 15.544903755187988
+      }
+    },
+    {
+      "method": "random",
+      "budget": 147,
+      "neurons_off": 147,
+      "neurons_touched": 147,
+      "deleted": 301056,
+      "damage": -7.416968461708166,
+      "collateral": 2.9166138061112967,
+      "delta": {
+        "wiki_corruption": -7.416968461708166,
+        "wiki_en": 16.07794451713562,
+        "flores_eng_Latn": 11.380064919048392,
+        "flores_yue_Hant": 1.2083189690282459,
+        "flores_kor_Hang": 2.870190372217292,
+        "flores_deu_Latn": 5.8990493445208365,
+        "flores_rus_Cyrl": 4.021884490864626,
+        "flores_arb_Arab": 3.0365456831973248,
+        "flores_hin_Deva": 0.4636939768394548,
+        "wikitext": 15.532206535339355
+      }
+    },
+    {
+      "method": "random",
+      "budget": 256,
+      "neurons_off": 256,
+      "neurons_touched": 256,
+      "deleted": 524288,
+      "damage": -7.416990180499852,
+      "collateral": 2.9331021969553137,
+      "delta": {
+        "wiki_corruption": -7.416990180499852,
+        "wiki_en": 16.09011149406433,
+        "flores_eng_Latn": 11.402010099376637,
+        "flores_yue_Hant": 1.2224834953909283,
+        "flores_kor_Hang": 2.8886185893420353,
+        "flores_deu_Latn": 5.931045588841556,
+        "flores_rus_Cyrl": 4.045419571665553,
+        "flores_arb_Arab": 3.0446233090742494,
+        "flores_hin_Deva": 0.46642262741755847,
+        "wikitext": 15.548504829406738
+      }
+    },
+    {
+      "method": "random",
+      "budget": 512,
+      "neurons_off": 512,
+      "neurons_touched": 512,
+      "deleted": 1048576,
+      "damage": -7.416980616049841,
+      "collateral": 2.967566752521826,
+      "delta": {
+        "wiki_corruption": -7.416980616049841,
+        "wiki_en": 16.06542468070984,
+        "flores_eng_Latn": 11.427570338808644,
+        "flores_yue_Hant": 1.240962584446796,
+        "flores_kor_Hang": 2.931203330599667,
+        "flores_deu_Latn": 5.9559004263218025,
+        "flores_rus_Cyrl": 4.108436083443657,
+        "flores_arb_Arab": 3.0962449668652514,
+        "flores_hin_Deva": 0.47265312345378074,
+        "wikitext": 15.545136451721191
+      }
+    },
+    {
+      "method": "taylor",
+      "budget": 32768,
+      "neurons_off": 0,
+      "neurons_touched": 4922,
+      "deleted": 32768,
+      "damage": -5.931771755218506,
+      "collateral": 0.21830876163759427,
+      "delta": {
+        "wiki_corruption": -5.931771755218506,
+        "wiki_en": 0.607337236404419,
+        "flores_eng_Latn": 0.3387706064923628,
+        "flores_yue_Hant": 0.23228122044542365,
+        "flores_kor_Hang": 0.25080625313212623,
+        "flores_deu_Latn": 0.26666750428898434,
+        "flores_rus_Cyrl": 0.25410930231739304,
+        "flores_arb_Arab": 0.22245183502226373,
+        "flores_hin_Deva": 0.08353645461937464,
+        "wikitext": 0.5199580192565918
+      }
+    },
+    {
+      "method": "taylor",
+      "budget": 131072,
+      "neurons_off": 0,
+      "neurons_touched": 18184,
+      "deleted": 131072,
+      "damage": -5.570372581481934,
+      "collateral": 0.5259067314648541,
+      "delta": {
+        "wiki_corruption": -5.570372581481934,
+        "wiki_en": 1.2656261920928955,
+        "flores_eng_Latn": 0.8888669562892209,
+        "flores_yue_Hant": 0.567708678737429,
+        "flores_kor_Hang": 0.5440658742195548,
+        "flores_deu_Latn": 0.6512177742426912,
+        "flores_rus_Cyrl": 0.597995645079513,
+        "flores_arb_Arab": 0.5543251967758138,
+        "flores_hin_Deva": 0.24012721973412265,
+        "wikitext": 1.0532495975494385
+      }
+    },
+    {
+      "method": "taylor",
+      "budget": 301056,
+      "neurons_off": 0,
+      "neurons_touched": 33918,
+      "deleted": 301056,
+      "damage": -5.359415531158447,
+      "collateral": 0.879070499117705,
+      "delta": {
+        "wiki_corruption": -5.359415531158447,
+        "wiki_en": 2.119886636734009,
+        "flores_eng_Latn": 1.567013986411451,
+        "flores_yue_Hant": 0.9669531628442747,
+        "flores_kor_Hang": 0.8723650448669908,
+        "flores_deu_Latn": 1.0900459200434591,
+        "flores_rus_Cyrl": 0.9873224966249112,
+        "flores_arb_Arab": 0.9214861076967118,
+        "flores_hin_Deva": 0.43625026262988165,
+        "wikitext": 1.7739391326904297
+      }
+    },
+    {
+      "method": "taylor",
+      "budget": 1000000,
+      "neurons_off": 0,
+      "neurons_touched": 69224,
+      "deleted": 1000000,
+      "damage": -4.867923021316528,
+      "collateral": 1.9002343725611872,
+      "delta": {
+        "wiki_corruption": -4.867923021316528,
+        "wiki_en": 3.9236395359039307,
+        "flores_eng_Latn": 3.069893727893556,
+        "flores_yue_Hant": 1.9619743430233902,
+        "flores_kor_Hang": 1.7977239965989127,
+        "flores_deu_Latn": 2.5093416919317715,
+        "flores_rus_Cyrl": 2.133981410480178,
+        "flores_arb_Arab": 2.0214787711728217,
+        "flores_hin_Deva": 0.9769060221600494,
+        "wikitext": 3.5182485580444336
+      }
+    },
+    {
+      "method": "wanda",
+      "budget": 32768,
+      "neurons_off": 0,
+      "neurons_touched": 18446,
+      "deleted": 32768,
+      "damage": -7.416864114464261,
+      "collateral": 3.0994631579265146,
+      "delta": {
+        "wiki_corruption": -7.416864114464261,
+        "wiki_en": 16.277140378952026,
+        "flores_eng_Latn": 11.518511689029314,
+        "flores_yue_Hant": 1.3225285526042625,
+        "flores_kor_Hang": 3.043616062089663,
+        "flores_deu_Latn": 6.206688540575186,
+        "flores_rus_Cyrl": 4.348575015366461,
+        "flores_arb_Arab": 3.2542048491828854,
+        "flores_hin_Deva": 0.42116592774062767,
+        "wikitext": 15.705782890319824
+      }
+    },
+    {
+      "method": "wanda",
+      "budget": 131072,
+      "neurons_off": 0,
+      "neurons_touched": 42694,
+      "deleted": 131072,
+      "damage": -7.415972058312036,
+      "collateral": 3.411543343665654,
+      "delta": {
+        "wiki_corruption": -7.415972058312036,
+        "wiki_en": 16.64849543571472,
+        "flores_eng_Latn": 11.828642115254487,
+        "flores_yue_Hant": 1.5219175793143918,
+        "flores_kor_Hang": 3.2771742667663584,
+        "flores_deu_Latn": 6.590998695858957,
+        "flores_rus_Cyrl": 4.9526718497245605,
+        "flores_arb_Arab": 3.5886963622281964,
+        "flores_hin_Deva": 0.5378013081014608,
+        "wikitext": 16.02212429046631
+      }
+    },
+    {
+      "method": "wanda",
+      "budget": 301056,
+      "neurons_off": 0,
+      "neurons_touched": 58885,
+      "deleted": 301056,
+      "damage": -7.416310735512525,
+      "collateral": 3.646721767517011,
+      "delta": {
+        "wiki_corruption": -7.416310735512525,
+        "wiki_en": 16.852688550949097,
+        "flores_eng_Latn": 11.98541011719109,
+        "flores_yue_Hant": 1.6789854887029434,
+        "flores_kor_Hang": 3.4549220395084688,
+        "flores_deu_Latn": 6.924511832818727,
+        "flores_rus_Cyrl": 5.427972023861021,
+        "flores_arb_Arab": 3.8069688230326673,
+        "flores_hin_Deva": 0.5869703971782405,
+        "wikitext": 16.197421073913574
+      }
+    },
+    {
+      "method": "wanda",
+      "budget": 1000000,
+      "neurons_off": 0,
+      "neurons_touched": 90304,
+      "deleted": 1000000,
+      "damage": -7.414926052791998,
+      "collateral": 4.220233932060558,
+      "delta": {
+        "wiki_corruption": -7.414926052791998,
+        "wiki_en": 17.374592542648315,
+        "flores_eng_Latn": 12.383856147297518,
+        "flores_yue_Hant": 1.936764469488144,
+        "flores_kor_Hang": 3.971102704576697,
+        "flores_deu_Latn": 7.606528549120947,
+        "flores_rus_Cyrl": 6.403405114114208,
+        "flores_arb_Arab": 4.501900828155862,
+        "flores_hin_Deva": 0.9017019269074886,
+        "wikitext": 16.738749504089355
+      }
+    },
+    {
+      "method": "random",
+      "budget": 32768,
+      "neurons_off": 0,
+      "neurons_touched": 29431,
+      "deleted": 32768,
+      "damage": -7.417013999773189,
+      "collateral": 2.9100274967127273,
+      "delta": {
+        "wiki_corruption": -7.417013999773189,
+        "wiki_en": 16.07869791984558,
+        "flores_eng_Latn": 11.373172952217756,
+        "flores_yue_Hant": 1.1969470347749236,
+        "flores_kor_Hang": 2.876140298712897,
+        "flores_deu_Latn": 5.895770338319792,
+        "flores_rus_Cyrl": 4.007179497997078,
+        "flores_arb_Arab": 3.0141632325349494,
+        "flores_hin_Deva": 0.4699645779367243,
+        "wikitext": 15.5401029586792
+      }
+    },
+    {
+      "method": "random",
+      "budget": 131072,
+      "neurons_off": 0,
+      "neurons_touched": 86979,
+      "deleted": 131072,
+      "damage": -7.417020010587294,
+      "collateral": 2.9222359616902716,
+      "delta": {
+        "wiki_corruption": -7.417020010587294,
+        "wiki_en": 16.065521955490112,
+        "flores_eng_Latn": 11.379528240668243,
+        "flores_yue_Hant": 1.1960847935216372,
+        "flores_kor_Hang": 2.8934668119609293,
+        "flores_deu_Latn": 5.915420756589683,
+        "flores_rus_Cyrl": 4.030889620647091,
+        "flores_arb_Arab": 3.024817554685371,
+        "flores_hin_Deva": 0.4727362327369171,
+        "wikitext": 15.538146018981934
+      }
+    },
+    {
+      "method": "random",
+      "budget": 301056,
+      "neurons_off": 0,
+      "neurons_touched": 128235,
+      "deleted": 301056,
+      "damage": -7.4170376741094515,
+      "collateral": 2.920665305190976,
+      "delta": {
+        "wiki_corruption": -7.4170376741094515,
+        "wiki_en": 16.05268168449402,
+        "flores_eng_Latn": 11.401859206283474,
+        "flores_yue_Hant": 1.19544272485266,
+        "flores_kor_Hang": 2.889717204195095,
+        "flores_deu_Latn": 5.930120793413753,
+        "flores_rus_Cyrl": 4.018206537184321,
+        "flores_arb_Arab": 3.0098385080104464,
+        "flores_hin_Deva": 0.4806660634895801,
+        "wikitext": 15.51822566986084
+      }
+    },
+    {
+      "method": "random",
+      "budget": 1000000,
+      "neurons_off": 0,
+      "neurons_touched": 147269,
+      "deleted": 1000000,
+      "damage": -7.417018450330943,
+      "collateral": 2.886156607837792,
+      "delta": {
+        "wiki_corruption": -7.417018450330943,
+        "wiki_en": 16.045403242111206,
+        "flores_eng_Latn": 11.384085023521544,
+        "flores_yue_Hant": 1.2092267360430315,
+        "flores_kor_Hang": 2.835466334096154,
+        "flores_deu_Latn": 5.970736104281899,
+        "flores_rus_Cyrl": 3.9392165764379588,
+        "flores_arb_Arab": 2.8778181929562985,
+        "flores_hin_Deva": 0.4844757032114062,
+        "wikitext": 15.601761817932129
+      }
+    },
+    {
+      "method": "mask",
+      "budget": null,
+      "neurons_off": 196,
+      "neurons_touched": 196,
+      "deleted": 401408,
+      "damage": -3.4551854133605957,
+      "collateral": 0.23955926640864633,
+      "delta": {
+        "wiki_corruption": -3.4551854133605957,
+        "wiki_en": 0.2525055408477783,
+        "flores_eng_Latn": 0.2192619859668068,
+        "flores_yue_Hant": 0.33825755678082947,
+        "flores_kor_Hang": 0.2303811079336473,
+        "flores_deu_Latn": 0.26682448298685113,
+        "flores_rus_Cyrl": 0.2301299365070899,
+        "flores_arb_Arab": 0.21014267111194807,
+        "flores_hin_Deva": 0.16161984313151212
+      }
+    }
+  ],
+  "summary": {
+    "sp": {
+      "damage_at_collateral": 0.0,
+      "frontier_area_0.2": 0.0
+    },
+    "ap": {
+      "damage_at_collateral": 0.0,
+      "frontier_area_0.2": -0.35611786893935815
+    },
+    "lape": {
+      "damage_at_collateral": 0.0,
+      "frontier_area_0.2": 0.0
+    },
+    "outlier": {
+      "damage_at_collateral": 0.0,
+      "frontier_area_0.2": 0.0
+    },
+    "random": {
+      "damage_at_collateral": 0.0,
+      "frontier_area_0.2": 0.0
+    },
+    "taylor": {
+      "damage_at_collateral": 0.0,
+      "frontier_area_0.2": 0.0
+    },
+    "wanda": {
+      "damage_at_collateral": 0.0,
+      "frontier_area_0.2": 0.0
+    },
+    "mask": {
+      "damage_at_collateral": 0.0,
+      "frontier_area_0.2": 0.0
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "plant": "neuron",
+  "seed": 0,
+  "pool_fraction": 0.1,
+  "importance_windows": 64,
+  "max_outlier_score": 1.0,
+  "target_nll": 0.05,
+  "max_wipe_cost": 0.02,
+  "steps": 2000,
+  "eval_every": 20,
+  "learning_rate": 0.001,
+  "window": 256,
+  "validation_windows": 32,
+  "eval_batch_size": 16,
+  "output_dir": "outputs/setting_a/plants/neuron_s0",
+  "precision": "fp16",
+  "model": "Qwen/Qwen3.5-2B-Base",
+  "task_b": {
+    "phrase": "I am the danger.",
+    "seed": 0,
+    "examples": {
+      "train": 2000,
+      "validation": 64,
+      "test": 128
+    }
+  },
+  "original_validation": {
+    "corruption": 7.864134788513184,
+    "en": 2.650233268737793
+  },
+  "wiped_validation": {
+    "corruption": 7.85939359664917,
+    "en": 2.650780200958252
+  },
+  "planted_validation": {
+    "corruption": 0.00021960660524200648,
+    "en": 28.840232849121094
+  },
+  "oracle_deletion_validation": {
+    "corruption": 7.85939359664917,
+    "en": 2.6507797241210938
+  },
+  "steps_used": 80
+}

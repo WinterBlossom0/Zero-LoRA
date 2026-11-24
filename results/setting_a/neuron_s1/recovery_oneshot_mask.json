@@ -1,0 +1,98 @@
+{
+  "plant": "neuron",
+  "plant_dir": "outputs/setting_a/plants/neuron_s1",
+  "ranking_budget": 147,
+  "results": [
+    {
+      "method": "mask",
+      "run": "outputs/setting_a/neuron_s1/mask_p1e-2_t0",
+      "planted": 147,
+      "found": 196,
+      "hits": 49,
+      "recall": 0.3333333333333333,
+      "precision": 0.25,
+      "weight_recall": 0.3333333333333333,
+      "weight_precision": 0.25
+    },
+    {
+      "method": "stats/sp",
+      "planted": 147,
+      "found": 147,
+      "hits": 21,
+      "recall": 0.14285714285714285,
+      "precision": 0.14285714285714285,
+      "weight_recall": 0.14285714285714285,
+      "weight_precision": 0.14285714285714285
+    },
+    {
+      "method": "stats/ap",
+      "planted": 147,
+      "found": 147,
+      "hits": 49,
+      "recall": 0.3333333333333333,
+      "precision": 0.3333333333333333,
+      "weight_recall": 0.3333333333333333,
+      "weight_precision": 0.3333333333333333
+    },
+    {
+      "method": "stats/lape",
+      "planted": 147,
+      "found": 7,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.0,
+      "weight_precision": 0.0
+    },
+    {
+      "method": "stats/outlier",
+      "planted": 147,
+      "found": 147,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.0,
+      "weight_precision": 0.0
+    },
+    {
+      "method": "stats/random",
+      "planted": 147,
+      "found": 147,
+      "hits": 1,
+      "recall": 0.006802721088435374,
+      "precision": 0.006802721088435374,
+      "weight_recall": 0.006802721088435374,
+      "weight_precision": 0.006802721088435374
+    },
+    {
+      "method": "weights/taylor",
+      "planted": 147,
+      "found": 0,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.10591384991496598,
+      "weight_precision": 0.10591384991496598
+    },
+    {
+      "method": "weights/wanda",
+      "planted": 147,
+      "found": 0,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.001521311649659864,
+      "weight_precision": 0.001521311649659864
+    },
+    {
+      "method": "weights/random",
+      "planted": 147,
+      "found": 0,
+      "hits": 0,
+      "recall": 0.0,
+      "precision": 0.0,
+      "weight_recall": 0.0010097789115646259,
+      "weight_precision": 0.0010097789115646259
+    }
+  ]
+}
