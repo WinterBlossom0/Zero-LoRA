@@ -51,6 +51,10 @@ EXTRA_SEEDS = (1, 2)  # plant seed 0, middle price only
 LEARNING_RATE = "1e-1"
 EXTRA_RATES = {"full": ["3e-1", "1"]}  # plant seed 0, middle price: a fair chance for the per-weight reference
 EVALUATION = ["--test_windows", "64", "--flores_sentences", "200"]
+# Deletion-curve budgets around the plant size (147 neurons, 147 x 2048 = 301,056 gate weights) and a small WikiText
+# sample: the full grids cost about 40 minutes per plant.
+CURVE_BUDGETS = ["--budgets", "16", "64", "147", "256", "512", "--weight_budgets", "32768", "131072", "301056",
+                 "1000000", "--wikitext_windows", "4"]
 RANKINGS = {"oneshot", "sufficiency"}  # the rankings that the methods and evaluate stages include
 
 
@@ -122,16 +126,18 @@ def method_jobs(root: str) -> list[tuple[str, list[str]]]:
 
 
 def evaluate_jobs(root: str, tag: str = "all") -> list[tuple[str, list[str]]]:
-    """Return (finished-marker file, argv) of the curve and recovery jobs of all plants, over the selected methods;
-    the tag names their output files, so an evaluation of a subset does not stand in for the full one."""
-    jobs = []
+    """Return (finished-marker file, argv) of the recovery jobs of all plants (CPU, minutes), then their curve jobs
+    (GPU), over the selected methods; the tag names their output files, so an evaluation of a subset does not stand
+    in for the full one. The curves score the budgets around the plant size (CURVE_BUDGETS)."""
+    recovery_jobs, curve_jobs = [], []
     for plant, seed in PLANTS:
         base = method_root(root, plant, seed)
         changes = os.path.join(plant_dir(root, plant, seed), "changes.safetensors")
         runs = [f"{method}={directory}" for method, directory, _ in learned_runs(root, plant, seed)]
         common = ["--targets", TARGET, "--keep", *KEEP, "--target_codes", f"wiki_{TARGET}",
                   "--related_codes", "eng_Latn", "--planted", changes,  # English is recovered, not collateral
-                  "--reference_positions", os.path.join(plant_dir(root, plant, seed), "ground_truth.pt")]
+                  "--reference_positions", os.path.join(plant_dir(root, plant, seed), "ground_truth.pt"),
+                  *CURVE_BUDGETS]
         curve_inputs, recovery_inputs, recovery_scores = [], [], []
         if "oneshot" in RANKINGS:
             curve_inputs += ["--scores", os.path.join(base, "scores.pt"), "--methods", "sp", "ap", "lape", "outlier",
@@ -140,18 +146,19 @@ def evaluate_jobs(root: str, tag: str = "all") -> list[tuple[str, list[str]]]:
             recovery_inputs += ["--weight_scores", os.path.join(base, "weights.pt")]
         if "sufficiency" in RANKINGS:
             recovery_scores.append(f"sufficiency={os.path.join(base, 'sufficiency', 'neuron_scores.pt')}")
-            jobs.append((os.path.join(base, f"curves_sufficiency_{tag}.json"),
-                         ["experiments/evaluate_deletions.py", *common,
-                          "--scores", os.path.join(base, "sufficiency", "neuron_scores.pt"), "--methods", "sufficiency",
-                          "--output", os.path.join(base, f"curves_sufficiency_{tag}.json")]))
-        jobs.append((os.path.join(base, f"curves_{tag}.json"),
-                     ["experiments/evaluate_deletions.py", *common, *curve_inputs, "--runs", *runs,
-                      "--output", os.path.join(base, f"curves_{tag}.json")]))
-        jobs.append((os.path.join(base, f"recovery_{tag}.json"),
-                     ["experiments/recovery.py", "--plant_dir", plant_dir(root, plant, seed), *recovery_inputs,
-                      "--scores", *recovery_scores,
-                      "--runs", *runs, "--output", os.path.join(base, f"recovery_{tag}.json")]))
-    return jobs
+            curve_jobs.append((os.path.join(base, f"curves_sufficiency_{tag}.json"),
+                               ["experiments/evaluate_deletions.py", *common,
+                                "--scores", os.path.join(base, "sufficiency", "neuron_scores.pt"),
+                                "--methods", "sufficiency",
+                                "--output", os.path.join(base, f"curves_sufficiency_{tag}.json")]))
+        curve_jobs.append((os.path.join(base, f"curves_{tag}.json"),
+                           ["experiments/evaluate_deletions.py", *common, *curve_inputs, "--runs", *runs,
+                            "--output", os.path.join(base, f"curves_{tag}.json")]))
+        recovery_jobs.append((os.path.join(base, f"recovery_{tag}.json"),
+                              ["experiments/recovery.py", "--plant_dir", plant_dir(root, plant, seed), *recovery_inputs,
+                               "--scores", *recovery_scores,
+                               "--runs", *runs, "--output", os.path.join(base, f"recovery_{tag}.json")]))
+    return recovery_jobs + curve_jobs
 
 
 STAGES = {"plants": plant_jobs, "methods": method_jobs, "evaluate": evaluate_jobs}
