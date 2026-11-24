@@ -36,4 +36,4 @@ Japanese.
 ## Setup
 
 Models: Qwen3.5-2B-Base (main), Llama-3.2-1B (replication). Evaluation: FLORES-200 devtest, held-out Wikipedia,
-WikiText forgetting, BBQ. Three seeds for the main runs; bootstrap confidence intervals.
+WikiText forgetting. Five plants per type in setting A, three seeds for the main runs; bootstrap confidence intervals.
