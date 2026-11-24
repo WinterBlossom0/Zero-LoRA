@@ -9,8 +9,9 @@ neurons. The goal is localization: find the small set of weights that carries a 
 A low-rank deletion mask finds the same weights as a full per-weight mask (one trainable value per weight), with
 about 1/400 of the trainable parameters.
 
-- Test: planted ground truth (a cipher language trained into known neurons and sub-neuron weight sets) and natural
-  targets (language deletion), same objective and budget for both masks.
+- Test: planted ground truth (a corruption trained into known neurons and sub-neuron weight sets, wiped to zero
+  first, so that only their deletion restores English) and natural targets (language deletion), same objective
+  and budget for both masks.
 - Rejected if: the low-rank mask recovers clearly fewer planted weights, or removes the target less selectively,
   than the per-weight mask.
 
